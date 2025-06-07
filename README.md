@@ -1,53 +1,69 @@
-### 🔹 **Data Warehouse Analytics**
+# 📦 Data Warehouse Analytics – SQL Project
 
-> A SQL-based data warehouse analytics project using complex queries to generate insights on sales trends, category performance, warehouse comparisons, and revenue tracking with advanced SQL functions.
+This project demonstrates advanced SQL analytics within a data warehouse environment. Using complex queries and analytical functions, we uncover insights related to revenue trends, warehouse performance, product sales rankings, and category-level sales patterns.
 
-```markdown
-# 🧮 Data Warehouse Analytics – SQL Project
+---
 
-This project focuses on running advanced SQL analytics on a simulated data warehouse environment. It provides insight into sales performance, warehouse efficiency, part category trends, and revenue dynamics using real-world business questions.
+## 🚀 Project Overview
 
-## 📊 Project Objectives
+Modern organizations rely on data warehouses to aggregate, manage, and analyze business data from various sources. This project simulates a typical data warehouse scenario and performs analysis that supports decision-making for sales strategy, inventory management, and regional logistics.
 
-The goal is to demonstrate how SQL can be used to solve core data warehouse analytics problems using complex, business-oriented queries. This includes:
+---
 
-- Monthly revenue analysis across warehouse locations
-- Identifying high-performing products and part categories
-- Trend analysis of net revenue over time
-- Performance comparisons between different warehouses
+## 🧱 Dataset Structure
 
-## 🧱 Sample Schema
+This project assumes a table called `warehouse_sales` with the following schema:
 
-The dataset used includes the following fields:
+| Column Name         | Data Type | Description                                |
+|---------------------|-----------|--------------------------------------------|
+| `product_id`        | VARCHAR   | Unique identifier for each product         |
+| `part_category`     | VARCHAR   | Category or type of the product            |
+| `warehouse_location`| VARCHAR   | Warehouse where the sale was recorded      |
+| `sales_date`        | DATE      | Date of the sale                           |
+| `revenue`           | NUMERIC   | Revenue generated from the sale            |
+| `units_sold`        | INT       | Number of units sold                       |
 
-- `product_id` (VARCHAR)
-- `part_category` (VARCHAR)
-- `warehouse_location` (VARCHAR)
-- `sales_date` (DATE)
-- `revenue` (NUMERIC)
-- `units_sold` (INT)
+---
 
-## 🛠️ SQL Concepts Demonstrated
+## 🎯 Analytical Objectives
+
+The SQL scripts in this repository answer the following business questions:
+
+1. 📆 What is the **monthly revenue by warehouse**?
+2. 🏆 Which products generate the **highest total revenue**?
+3. 📦 How do **sales vary by product category and warehouse**?
+4. 🔝 What are the **top 5 products by revenue** over the past year?
+5. 📈 What are the **net revenue trends** over time?
+6. 🏭 How do **warehouse performances compare** based on revenue contribution?
+
+---
+
+## 🛠️ SQL Techniques Used
+
+This project showcases advanced SQL techniques such as:
 
 - **Common Table Expressions (CTEs)**
-- **Window Functions**: `RANK()`, `LAG()`, `DENSE_RANK()`
-- **Aggregation**: `SUM()`, `ROUND()`
-- **Date Handling**: `DATE_TRUNC()`, `INTERVAL`
-- **Subqueries and Derived Tables**
-- **Performance Rankings and Revenue Shares**
+- **Window Functions** (`RANK()`, `DENSE_RANK()`, `LAG()`)
+- **Aggregate Functions** (`SUM()`, `ROUND()`)
+- **Date Functions** (`DATE_TRUNC()`, `INTERVAL`)
+- **Derived Tables & Subqueries**
+- **Performance Comparisons and Ranking**
+
+---
 
 ## 📁 Repository Structure
 
 ```
 
-/data-warehouse-analytics-sql/
+data-warehouse-analytics-sql/
 │
 ├── scripts/
-│   ├── monthly\_revenue\_by\_warehouse.sql
-│   ├── top\_selling\_products.sql
-│   ├── category\_warehouse\_performance.sql
-│   ├── yearly\_top\_5\_products.sql
-│   └── revenue\_trends\_and\_warehouse\_comparison.sql
+│   ├── 01\_monthly\_revenue\_by\_warehouse.sql
+│   ├── 02\_top\_revenue\_products.sql
+│   ├── 03\_category\_warehouse\_sales\_variation.sql
+│   ├── 04\_top\_5\_products\_last\_year.sql
+│   ├── 05\_revenue\_trends.sql
+│   └── 06\_warehouse\_performance\_comparison.sql
 │
 ├── sample\_data/
 │   └── warehouse\_sales\_sample.csv
@@ -56,22 +72,46 @@ The dataset used includes the following fields:
 
 ```
 
-## ✅ How to Use
+---
 
-1. Import the sample dataset into your SQL database (PostgreSQL recommended).
-2. Run the scripts in `/scripts/` to execute the analytics queries.
-3. Modify queries as needed for your dataset or SQL dialect.
+## 📌 How to Use
 
-## 📈 Key Business Insights
-
-- How sales and revenue change month-to-month across warehouses
-- Which products and categories drive the most revenue
-- Distribution of revenue contribution by warehouse
-- Identifying performance gaps and growth opportunities
+1. Load the `warehouse_sales_sample.csv` data into your SQL engine (PostgreSQL recommended).
+2. Open each SQL file from the `/scripts/` folder and execute the queries.
+3. Modify the queries as needed to match your local schema or database dialect.
 
 ---
 
-💡 **This project can serve as a reference for building dashboards, designing KPIs, or preparing for data engineering and business intelligence roles.**
+## 📊 Insights You Can Derive
 
-Feel free to fork or contribute! ⭐️
-```
+- Identify the most profitable warehouses by month.
+- Highlight top-selling products and categories.
+- Compare how each warehouse contributes to overall business revenue.
+- Observe revenue growth, stagnation, or decline trends over time.
+
+---
+
+## 📈 Ideal Use Cases
+
+- Data Analytics Portfolios
+- SQL Interview Preparation
+- Business Intelligence Demonstrations
+- Dashboard Prototyping
+
+---
+
+## 🤝 Contributions
+
+Feel free to fork, contribute, or open issues if you’d like to collaborate or extend the project. All feedback is welcome!
+
+---
+
+## 📜 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+## ⭐ Support
+
+If you find this project helpful, please consider starring the repo! ⭐
